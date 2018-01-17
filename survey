@@ -1,0 +1,19 @@
+  {% for question in page.survey.survey_questions %}
+
+    <p>&nbsp;</p>
+     <p>Question ID: {{ question.id }}</p>
+
+
+     {% for possibleresponses in question.possible_responses %}
+     <p> Each possibleresponses {{ possibleresponses.name }}</p>
+     {% endfor %}
+
+
+     {% for responses in question.responses %}
+     <p> Each response for each question: {{ responses.response.id }}</p>
+     <p> Each signup for each question: {{ responses.signup.id }}</p>
+
+     {% endfor %}
+
+
+  {% endfor %}
